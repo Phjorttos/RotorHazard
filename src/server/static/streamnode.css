@@ -59,10 +59,42 @@ body {
 	overflow: hidden;
 	white-space: nowrap;
 	display: block;
+	text-shadow:
+		0.07em 0.07em 0 #000,
+		0.13em 0.07em 0 #000,
+		0.07em 0.13em 0 #000,
+		0.13em 0.13em 0 #000,
+		-0.03em -0.03em 0 #000,
+		0.03em -0.03em 0 #000,
+		-0.03em 0.03em 0 #000,
+		0.03em 0.03em 0 #000;
+}
+
+#consec {
+	margin-right: 2rem;
+	color: rgb(255, 255, 255);
+	text-shadow:
+		0.07em 0.07em 0 #000,
+		0.13em 0.07em 0 #000,
+		0.07em 0.13em 0 #000,
+		0.13em 0.13em 0 #000,
+		-0.03em -0.03em 0 #000,
+		0.03em -0.03em 0 #000,
+		-0.03em 0.03em 0 #000,
+		0.03em 0.03em 0 #000;
 }
 
 #rank_stat {
 	flex: 0 0 auto;
+	text-shadow:
+		0.07em 0.07em 0 #000,
+		0.13em 0.07em 0 #000,
+		0.07em 0.13em 0 #000,
+		0.13em 0.13em 0 #000,
+		-0.03em -0.03em 0 #000,
+		0.03em -0.03em 0 #000,
+		-0.03em 0.03em 0 #000,
+		0.03em 0.03em 0 #000;
 }
 
 #current_laps {

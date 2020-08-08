@@ -482,6 +482,15 @@ def marshal():
     return render_template('marshal.html', serverInfo=serverInfo, getOption=Options.get, __=__,
         num_nodes=RACE.num_nodes)
 
+@APP.route('/stream/paused/<int:node_id>')
+def stream_paused(node_id):
+    if node_id <= RACE.num_nodes:
+        return render_template('streampaused.html', serverInfo=serverInfo, getOption=Options.get, __=__,
+            node_id=node_id-1
+        )
+    else:
+        return False
+
 @APP.route('/settings')
 @requires_auth
 def settings():

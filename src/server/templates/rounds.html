@@ -47,7 +47,7 @@
 				event_leaderboard.append(build_leaderboard(msg.event_leaderboard.by_race_time, 'by_race_time', msg.meta));
 				event_leaderboard.append('<h3>' + __('Fastest Laps') + '</h3>');
 				event_leaderboard.append(build_leaderboard(msg.event_leaderboard.by_fastest_lap, 'by_fastest_lap', msg.meta));
-				event_leaderboard.append('<h3>' + __('Fastest 3 Consecutive Laps') + '</h3>');
+				event_leaderboard.append('<h3>' + __('Fastest 5 Consecutive Laps') + '</h3>');
 				event_leaderboard.append(build_leaderboard(msg.event_leaderboard.by_consecutives, 'by_consecutives', msg.meta));
 				panel_content.append(event_leaderboard);
 				panel.append(panel_content);
@@ -103,7 +103,7 @@
 									class_leaderboard_content.append('<h4>' + __('Fastest Laps') + '</h4>');
 									class_leaderboard_content.append(build_leaderboard(current_class.leaderboard.by_fastest_lap, 'by_fastest_lap', msg.meta));
 								} else if (boards[i] == 'by_consecutives') {
-									class_leaderboard_content.append('<h4>' + __('Fastest 3 Consecutive Laps') + '</h4>');
+									class_leaderboard_content.append('<h4>' + __('Fastest 5 Consecutive Laps') + '</h4>');
 									class_leaderboard_content.append(build_leaderboard(current_class.leaderboard.by_consecutives, 'by_consecutives', msg.meta));
 								}
 							}

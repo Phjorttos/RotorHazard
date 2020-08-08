@@ -378,8 +378,8 @@ def calc_leaderboard(DB, **params):
             fastest_lap.append(fast_lap)
 
         gevent.sleep()
-        # find best consecutive 3 laps
-        if max_laps[i] < 3:
+        # find best consecutive 5 laps
+        if max_laps[i] < 5:
             consecutives.append(None)
             consecutives_source.append(None)
         else:
@@ -388,10 +388,10 @@ def calc_leaderboard(DB, **params):
             if USE_CURRENT:
                 thisrace = current_laps[i][1:]
 
-                for j in range(len(thisrace) - 2):
+                for j in range(len(thisrace) - 4):
                     gevent.sleep()
                     all_consecutives.append({
-                        'time': thisrace[j]['lap_time'] + thisrace[j+1]['lap_time'] + thisrace[j+2]['lap_time'],
+                        'time': thisrace[j]['lap_time'] + thisrace[j+1]['lap_time'] + thisrace[j+2]['lap_time'] + thisrace[j+3]['lap_time'] + thisrace[j+4]['lap_time'],
                         'race_id': None,
                     })
 
@@ -405,11 +405,11 @@ def calc_leaderboard(DB, **params):
                             ~Database.SavedRaceLap.id.in_(holeshots[i]) \
                             ).all()
 
-                    if len(thisrace) >= 3:
-                        for j in range(len(thisrace) - 2):
+                    if len(thisrace) >= 5:
+                        for j in range(len(thisrace) - 4):
                             gevent.sleep()
                             all_consecutives.append({
-                                'time': thisrace[j].lap_time + thisrace[j+1].lap_time + thisrace[j+2].lap_time,
+                                'time': thisrace[j].lap_time + thisrace[j+1].lap_time + thisrace[j+2].lap_time + thisrace[j+3].lap_time + thisrace[j+4].lap_time,
                                 'race_id': race_id
                             })
 
